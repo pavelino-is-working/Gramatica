@@ -66,7 +66,7 @@ class AutomatFinit():
     def tranziti_in_productii(self):
         productii = {}
         for tranzitie, stari in self.tranziti.items():
-            print(tranzitie, stari)
+
             if tranzitie[0] not in productii:
                 productii[tranzitie[0]] = []
 
@@ -78,7 +78,11 @@ class AutomatFinit():
                 my_productie = productii[tranzitie[0]]
                 my_productie.append(productie)
                 productii[tranzitie[0]] = my_productie
-        return productii
+
+        my_productii = []
+        for key, value in productii.items():
+            my_productii.append([key, value])
+        return my_productii
 
 
     def conversie_af_gr(self):

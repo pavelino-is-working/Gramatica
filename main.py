@@ -99,19 +99,23 @@ def main():
         data = dict(json.load(f))
 
     gramatica = Gramatica(data["neterminale"], data["terminale"], data["productii"], data["initial"])
-    print(gramatica)
+    print(gramatica, '\n')
     gramatica.conversie_gr_af()
-
 
     with open("gr_in_af.json") as f:
         data = dict(json.load(f))
 
-    at = AutomatFinit(data['stari'], data['alfabet'], data['tranziti'],
+    af = AutomatFinit(data['stari'], data['alfabet'], data['tranziti'],
                       data['stare_initiala'], data['stari_finale'])
 
-    at.print_automat()
-    at.conversie_af_gr()
+    af.print_automat()
+    af.conversie_af_gr()
 
+    with open("af_in_gr.json") as f:
+        data = dict(json.load(f))
+
+    gramatica2 = Gramatica(data["neterminale"], data["terminale"], data["productii"], data["initial"])
+    print(gramatica2, "\n")
 
 
 if __name__ == '__main__':
