@@ -1,0 +1,1 @@
+{"neterminale": ["S", "A", "B"], "terminale": ["a", "b", "c", "d"], "initial": "S", "productii": {"S": ["aA", "bB"], "B": ["cA", "c"], "A": ["aA", "d"]}}
