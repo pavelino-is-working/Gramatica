@@ -72,10 +72,8 @@ class Gramatica:
                         my_tranzitie = tranziti[(productie[0],elem[0])]
                         my_tranzitie.append("K")
                         tranziti[(productie[0], elem[0])] = my_tranzitie
-        my_tranziti = []
-        for key, value in tranziti.items():
-            my_tranziti.append([key[0], key[1], value])
-        return my_tranziti
+
+        return [[key[0], key[1], value] for key, value in tranziti.items()]
 
     def conversie_gr_af(self):
         """

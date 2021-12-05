@@ -79,10 +79,8 @@ class AutomatFinit():
                 my_productie.append(productie)
                 productii[tranzitie[0]] = my_productie
 
-        my_productii = []
-        for key, value in productii.items():
-            my_productii.append([key, value])
-        return my_productii
+
+        return [[key, value] for key, value in productii.items()]
 
 
     def conversie_af_gr(self):
